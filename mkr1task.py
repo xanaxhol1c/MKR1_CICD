@@ -19,6 +19,10 @@ def read_population_data(filename):
 def sort_by_area(data):
     return sorted(data, key=lambda x: x[1], reverse=True)
 
+def sort_by_population(data):
+    return sorted(data, key=lambda x: x[2], reverse=True)
+
+
 def print_sorted_data(data, sort_key):
     print(f"\nSorted by {sort_key}:\n")
     for country, area, population in data:
@@ -31,6 +35,9 @@ if __name__ == "__main__":
     if population_data:
         sorted_by_area = sort_by_area(population_data)
         print_sorted_data(sorted_by_area, "area")
+
+        sorted_by_population = sort_by_population(population_data)
+        print_sorted_data(sorted_by_population, "population")
     
 
 
